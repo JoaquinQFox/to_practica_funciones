@@ -13,6 +13,9 @@ public:
     Producto(const std::string& nombre, double precio);
     double getPrecio() const;
     void mostrarDatos() const;
-};
 
+    Producto operator+(const Producto& otro) const;
+
+    friend int compararPrecios(const Producto& primero, const Producto& segundo);
+};
 #endif
