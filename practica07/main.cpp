@@ -1,8 +1,8 @@
 #include "Producto.h"
-#include <iostream>
-#include <vector>
 #include "Descuento.h"
 #include <iomanip>
+#include <iostream>
+#include <vector>
 
 void ejecutarSistemaProductos() {
     const std::vector<Producto> productos = {
@@ -16,7 +16,7 @@ void ejecutarSistemaProductos() {
     for (const Producto& producto : productos) {
         producto.mostrarDatos();
     }
-    
+
     const double porcentaje = 10.0;
     std::cout << "\nDescuento del 10% en el teclado:\n"
               << "Precio final: S/ " << std::fixed << std::setprecision(2)
@@ -54,10 +54,16 @@ void ejecutarSistemaProductos() {
     for (const Producto& producto : filtrados) {
         producto.mostrarDatos();;
     }
+
+
+    std::cout << "\nSuma de productos:\n";
+    productos[0].mostrarDatos();
+    productos[1].mostrarDatos();
+    const Producto paquete = productos[0] + productos[1];
+    paquete.mostrarDatos();
 }
 
 int main() {
     ejecutarSistemaProductos();
     return 0;
 }
-
